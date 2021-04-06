@@ -1,16 +1,22 @@
-package com.playzone.bookstore;
+package com.playzone.bookstore.config;
 
 import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.core.cql.keyspace.CreateKeyspaceSpecification;
 import org.springframework.data.cassandra.core.cql.keyspace.KeyspaceOption;
+import org.springframework.data.cassandra.core.mapping.BasicCassandraMappingContext;
+import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
+import org.springframework.data.cassandra.core.mapping.SimpleUserTypeResolver;
+import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 @Configuration
+@EnableCassandraRepositories(basePackages = {"com.playzone.bookstore.repository" })
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Value("${spring.data.cassandra.keyspace-name: 'default'}")
@@ -50,6 +56,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     protected String getLocalDataCenter() {
         return "DC1";
     }
+        
 
     //@Override
     //protected List<DropKeyspaceSpecification> getKeyspaceDrops() {
