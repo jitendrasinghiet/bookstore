@@ -24,6 +24,7 @@ public class Book {
 	private UUID id;	
 	
 	@NotNull @Size(max = 50)
+
 	private String title;
 	@NotBlank @Size(max = 100)
 	private String description;
@@ -34,8 +35,14 @@ public class Book {
 	
 	//@PrimaryKeyColumn(type=PrimaryKeyType.PARTITIONED)
 	@NotNull @Size(max = 4)
+
 	private Integer year;
 	
+	
+//	@Frozen
+//	@CassandraType(type = Name.UDT, userTypeName = "author_type")
+//	@Transient
+//	private Author author;	
 	
 //	@Frozen
 //	@CassandraType(type = Name.UDT, userTypeName = "author_type")

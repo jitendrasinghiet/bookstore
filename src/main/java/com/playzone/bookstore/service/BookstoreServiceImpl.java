@@ -33,14 +33,15 @@ public class BookstoreServiceImpl implements BookstoreService{
 		return reactiveBookstoreRepository.findById(id);		
 	}	
 
+
 	@Override
 	public void update(Book p) {		
-		bookstoreRepository.save(p);		
+		bookstoreRepository.save(p);
 	}
 
 	@Override
 	public void delete(UUID id) {
-		bookstoreRepository.deleteById(id);		
+		bookstoreRepository.deleteById(id);
 	}
 
 	@Override

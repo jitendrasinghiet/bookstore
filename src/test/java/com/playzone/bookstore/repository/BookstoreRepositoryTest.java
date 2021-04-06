@@ -70,12 +70,12 @@ class BookstoreRepositoryTest {
           .verifyComplete();
     }
 
-    @Test
-    public void givenYearForFilter_whenDbIsQueried_thenShouldReturnFilteredRecords() {
-        StepVerifier
-          .create(repository.findByYear(35))
-          .expectNextCount(4)
-          .verifyComplete();
-    }
+    //@Test
+//    public void givenYearForFilter_whenDbIsQueried_thenShouldReturnFilteredRecords() {
+//        StepVerifier
+//          .create(repository.findByYear(35))
+//          .expectNextCount(4)
+//          .verifyComplete();
+//    }
 
 }

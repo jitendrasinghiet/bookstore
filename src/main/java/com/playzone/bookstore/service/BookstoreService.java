@@ -23,7 +23,7 @@ public interface BookstoreService {
 	List<Book> getAll();
 	Optional<Book> getByID(UUID id);
 	Optional<Book> create(Book p);
-	
+
 	void initializeBooks(List<Book> books);
 	
 	static List<Book> demoData(int count) {
