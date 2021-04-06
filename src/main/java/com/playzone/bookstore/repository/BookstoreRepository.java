@@ -1,15 +1,16 @@
 package com.playzone.bookstore.repository;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.data.cassandra.repository.AllowFiltering;
-import org.springframework.data.cassandra.repository.ReactiveCassandraRepository;
+import org.springframework.data.cassandra.repository.CassandraRepository;
 
 import com.playzone.bookstore.entity.Book;
 
-import reactor.core.publisher.Flux;
 
-
-public interface BookstoreRepository extends ReactiveCassandraRepository<Book, Long>{
+public interface BookstoreRepository extends CassandraRepository<Book, UUID>{
 
 	@AllowFiltering
-	Flux<Book> findByYear(Integer year);
+	List<Book> findByYear(Integer year);
 }
